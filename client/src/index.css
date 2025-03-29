@@ -1,13 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --primary-color: #CFE0BC;
+    --button-background: #7FA653;
+    --button-text: #CFE0BC;
+    --auth-button-background: #99CD85;
+  }
+
   * {
     @apply border-border;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
+    @apply antialiased bg-background text-foreground;
   }
+}
+
+/* Button customizations */
+.btn-primary {
+  background-color: var(--button-background) !important;
+  color: var(--button-text) !important;
+}
+
+.btn-auth {
+  background-color: var(--auth-button-background) !important;
+}
+
+.btn-login {
+  background-color: var(--button-background) !important;
+  color: var(--button-text) !important;
 }

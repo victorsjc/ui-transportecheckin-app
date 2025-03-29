@@ -132,7 +132,7 @@ export default function AuthPage() {
                     />
                     <Button 
                       type="submit" 
-                      className="w-full" 
+                      className="w-full btn-login" 
                       disabled={loginMutation.isPending}
                     >
                       {loginMutation.isPending ? "Entrando..." : "Entrar"}
@@ -218,7 +218,7 @@ export default function AuthPage() {
                     />
                     <Button 
                       type="submit" 
-                      className="w-full" 
+                      className="w-full btn-login" 
                       disabled={registerMutation.isPending}
                     >
                       {registerMutation.isPending ? "Cadastrando..." : "Cadastrar"}
@@ -243,7 +243,7 @@ export default function AuthPage() {
           <Button
             onClick={() => navigate("/qr-scanner")}
             variant="outline"
-            className="w-full flex items-center justify-center gap-2 border-primary text-primary"
+            className="w-full flex items-center justify-center gap-2 btn-primary"
           >
             <QrCode className="h-5 w-5" />
             Check-in com QR Code (Passageiros Avulsos)

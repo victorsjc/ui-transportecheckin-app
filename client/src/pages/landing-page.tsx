@@ -16,7 +16,7 @@ export default function LandingPage() {
         <Button 
           onClick={() => navigate("/auth")}
           variant="outline" 
-          className="bg-white text-primary hover:bg-opacity-90"
+          className="btn-auth text-primary hover:bg-opacity-90"
         >
           Entrar
         </Button>
@@ -36,7 +36,7 @@ export default function LandingPage() {
             <Button 
               onClick={() => navigate("/auth")}
               size="lg"
-              className="bg-white text-primary hover:bg-opacity-90"
+              className="btn-primary hover:opacity-90"
             >
               Cadastre-se
             </Button>
@@ -44,7 +44,7 @@ export default function LandingPage() {
               onClick={() => navigate("/qr-scanner")}
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white/10"
+              className="btn-primary border-white hover:opacity-90"
             >
               Check-in Avulso
             </Button>
@@ -160,7 +160,7 @@ export default function LandingPage() {
             <Button 
               onClick={() => navigate("/auth")}
               size="lg"
-              className="bg-primary text-white hover:bg-primary/90"
+              className="btn-primary hover:opacity-90"
             >
               Comece a Usar Agora
             </Button>
