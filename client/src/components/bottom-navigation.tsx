@@ -12,7 +12,7 @@ export default function BottomNavigation({ active }: BottomNavigationProps) {
     <nav className="bg-white border-t border-gray-200 px-4 py-3">
       <div className="flex justify-around">
         <button 
-          onClick={() => navigate("/")} 
+          onClick={() => navigate("/dashboard")} 
           className={`flex flex-col items-center ${active === "home" ? "text-primary" : "text-gray-600"}`}
         >
           <Home className="h-6 w-6" />
