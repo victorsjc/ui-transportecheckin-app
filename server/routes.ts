@@ -464,6 +464,35 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+  // Rota para usuário se promover a administrador
+  app.patch("/api/users/:id/role", async (req, res) => {
+    if (!req.isAuthenticated()) return res.sendStatus(401);
+    
+    const userId = parseInt(req.params.id);
+    
+    // Verificar se o usuário está alterando seu próprio perfil
+    if (req.user.id !== userId) {
+      return res.status(403).json({ error: "Você só pode modificar seu próprio perfil" });
+    }
+    
+    try {
+      // Apenas permitir mudança para administrador
+      if (req.body.userType !== "admin") {
+        return res.status(400).json({ error: "Tipo de usuário inválido" });
+      }
+      
+      const updatedUser = await storage.updateUser(userId, { userType: "admin" });
+      
+      if (!updatedUser) {
+        return res.status(404).json({ error: "Usuário não encontrado" });
+      }
+      
+      res.json(updatedUser);
+    } catch (error) {
+      res.status(500).json({ error: "Erro ao atualizar tipo de usuário" });
+    }
+  });
+  
   app.delete("/api/admin/users/:id", async (req, res) => {
     if (!req.isAuthenticated() || req.user.userType !== "admin") {
       return res.sendStatus(403);

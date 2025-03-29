@@ -5,11 +5,39 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { apiRequest, queryClient } from "@/lib/queryClient";
+import { useToast } from "@/hooks/use-toast";
 
 export default function ProfilePage() {
   const { user, logoutMutation } = useAuth();
+  const { toast } = useToast();
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [darkTheme, setDarkTheme] = useState(false);
+  
+  const updateUserRoleMutation = useMutation({
+    mutationFn: async () => {
+      const res = await apiRequest("PATCH", `/api/users/${user?.id}/role`, { 
+        userType: "admin" 
+      });
+      return await res.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Perfil atualizado",
+        description: "Você agora tem privilégios de administrador. Faça login novamente para aplicar as alterações.",
+        variant: "default",
+      });
+      queryClient.invalidateQueries({ queryKey: ["/api/user"] });
+    },
+    onError: (error: Error) => {
+      toast({
+        title: "Erro ao atualizar perfil",
+        description: error.message,
+        variant: "destructive",
+      });
+    },
+  });
 
   // Get user initials for avatar
   const getInitials = () => {
@@ -92,6 +120,16 @@ export default function ProfilePage() {
             </div>
           </div>
         </div>
+        
+        {user?.userType !== "admin" && (
+          <Button 
+            className="w-full mb-4 bg-purple-600 hover:bg-purple-700 text-white" 
+            onClick={() => updateUserRoleMutation.mutate()}
+            disabled={updateUserRoleMutation.isPending}
+          >
+            {updateUserRoleMutation.isPending ? "Atualizando..." : "Tornar-se Administrador"}
+          </Button>
+        )}
         
         <Button 
           className="w-full bg-red-500 hover:bg-red-600" 
