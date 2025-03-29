@@ -6,11 +6,14 @@
 
 @layer base {
   :root {
-    --primary-color: #CFE0BC;
-    --button-background: #7FA653;
-    --button-text: #000000;
+    --primary-color: #45b5c4;
+    --button-background: #1693a5;
+    --button-text: #FFFFFF;
     --text-color: #000000;
-    --auth-button-background: #99CD85;
+    --auth-button-background: #1693a5;
+    --title-color: #1693a5;
+    --description-color: #1693a5;
+    --logo-color: #1693a5;
   }
 
   * {
@@ -44,4 +47,20 @@
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
+}
+
+.text-title {
+  color: var(--title-color) !important;
+}
+
+.text-description {
+  color: var(--description-color) !important;
+}
+
+.text-logo {
+  color: var(--logo-color) !important;
+}
+
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
 }
