@@ -25,6 +25,8 @@ import AdminUsersAdd from "@/pages/admin-users-add";
 import AdminTripsList from "@/pages/admin-trips-list";
 import AdminTripsAdd from "@/pages/admin-trips-add";
 import AdminTripDetails from "@/pages/admin-trip-details";
+import AdminLocations from "@/pages/admin-locations";
+import AdminTimes from "@/pages/admin-times";
 
 // Route that redirects to dashboard if authenticated, otherwise shows landing page
 function HomeRoute() {
@@ -61,6 +63,8 @@ function Router() {
       <ProtectedRoute path="/admin/trips" component={AdminTripsList} />
       <ProtectedRoute path="/admin/trips/add" component={AdminTripsAdd} />
       <ProtectedRoute path="/admin/trips/details/:id" component={AdminTripDetails} />
+      <ProtectedRoute path="/admin/locations" component={AdminLocations} />
+      <ProtectedRoute path="/admin/times" component={AdminTimes} />
       
       <Route component={NotFound} />
     </Switch>
