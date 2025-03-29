@@ -8,8 +8,8 @@
   :root {
     --primary-color: #CFE0BC;
     --button-background: #7FA653;
-    --button-text: #99CD85;
-    --text-color: #99CD85;
+    --button-text: #000000;
+    --text-color: #000000;
     --auth-button-background: #99CD85;
   }
 
