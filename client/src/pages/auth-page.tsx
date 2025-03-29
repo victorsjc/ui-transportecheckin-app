@@ -16,7 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { ArrowLeft, QrCode } from "lucide-react";
+import { ArrowLeft, QrCode, Bus } from "lucide-react";
 
 const loginSchema = z.object({
   email: z.string().email("E-mail inválido"),
@@ -77,7 +77,7 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header with back button */}
-      <header className="bg-primary text-white p-4 flex items-center">
+      <header className="bg-[#7ececa] text-white p-4 flex items-center">
         <Button 
           variant="ghost" 
           size="icon" 
@@ -86,7 +86,10 @@ export default function AuthPage() {
         >
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <h1 className="text-xl font-bold text-white">TripCheck - Acesso ao Sistema</h1>
+        <div className="flex items-center gap-2">
+          <Bus className="h-6 w-6 text-[#1693a5]" />
+          <h1 className="text-xl font-bold text-[#1693a5]">TripCheck</h1>
+        </div>
       </header>
 
       <div className="flex-1 p-6 flex flex-col justify-center max-w-md mx-auto w-full">
