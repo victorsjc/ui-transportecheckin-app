@@ -140,5 +140,9 @@ Configure estas variáveis no dashboard da Vercel:
 2. **API não responde**: Verifique as configurações do `vercel.json`
 3. **Problemas de CORS**: Verifique se o middleware CORS está habilitado
 4. **Sessões não persistem**: Verifique a configuração das sessões e cookies
+5. **Problemas com portas**: A Vercel não permite especificar portas como 5000 em funções serverless.
+   Este projeto já está configurado para funcionar corretamente com a Vercel através dos arquivos:
+   - `api/_serverless.js` - Adaptador para ambiente serverless
+   - `vercel.json` - Configuração de rotas e ambientes
 
 Para outros problemas, consulte a [documentação da Vercel](https://vercel.com/docs).
