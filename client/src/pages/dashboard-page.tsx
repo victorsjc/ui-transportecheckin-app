@@ -141,7 +141,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="mb-4">
           <CardContent className="pt-6">
             <h2 className="text-lg font-semibold text-app mb-3">Gerenciar Férias</h2>
             
@@ -187,6 +187,29 @@ export default function DashboardPage() {
             </div>
           </CardContent>
         </Card>
+        
+        {/* Admin Only Section */}
+        {user?.userType === "admin" && (
+          <Card>
+            <CardContent className="pt-6">
+              <h2 className="text-lg font-semibold text-app mb-3">Área Administrativa</h2>
+              
+              <div className="space-y-4">
+                <p className="text-sm text-gray-600">Acesse funções administrativas para gerenciar usuários e viagens.</p>
+                
+                <Button 
+                  onClick={() => navigate("/admin")} 
+                  className="w-full btn-primary"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                  </svg>
+                  Acessar Painel Administrativo
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        )}
       </main>
 
       <BottomNavigation active="home" />

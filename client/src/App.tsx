@@ -18,6 +18,14 @@ import CheckinConfirmationPage from "@/pages/checkin-confirmation-page";
 import QrScannerPage from "@/pages/qr-scanner-page";
 import VacationAddPage from "@/pages/vacation-add-page";
 
+// Admin pages
+import AdminPage from "@/pages/admin-page";
+import AdminUsersList from "@/pages/admin-users-list";
+import AdminUsersAdd from "@/pages/admin-users-add";
+import AdminTripsList from "@/pages/admin-trips-list";
+import AdminTripsAdd from "@/pages/admin-trips-add";
+import AdminTripDetails from "@/pages/admin-trip-details";
+
 // Route that redirects to dashboard if authenticated, otherwise shows landing page
 function HomeRoute() {
   const { user } = useAuth();
@@ -45,6 +53,14 @@ function Router() {
       <ProtectedRoute path="/history" component={HistoryPage} />
       <ProtectedRoute path="/checkin/mensalista" component={CheckinMensalistaPage} />
       <ProtectedRoute path="/vacation/add" component={VacationAddPage} />
+      
+      {/* Admin routes */}
+      <ProtectedRoute path="/admin" component={AdminPage} />
+      <ProtectedRoute path="/admin/users" component={AdminUsersList} />
+      <ProtectedRoute path="/admin/users/add" component={AdminUsersAdd} />
+      <ProtectedRoute path="/admin/trips" component={AdminTripsList} />
+      <ProtectedRoute path="/admin/trips/add" component={AdminTripsAdd} />
+      <ProtectedRoute path="/admin/trips/details/:id" component={AdminTripDetails} />
       
       <Route component={NotFound} />
     </Switch>
