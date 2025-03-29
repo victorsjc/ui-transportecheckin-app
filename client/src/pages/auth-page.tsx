@@ -75,7 +75,7 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#a0ded6]">
       {/* Header with back button */}
       <header className="bg-[#7ececa] text-white p-4 flex items-center">
         <Button 
@@ -239,7 +239,7 @@ export default function AuthPage() {
               <div className="w-full border-t border-gray-300"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">ou</span>
+              <span className="px-2 bg-[#a0ded6] text-white">ou</span>
             </div>
           </div>
 
