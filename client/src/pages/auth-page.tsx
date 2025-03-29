@@ -77,7 +77,7 @@ export default function AuthPage() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header with back button */}
-      <header className="bg-[#7ececa] text-white p-4 flex items-center">
+      <header className="bg-[#45b5c4] text-white p-4 flex items-center">
         <Button 
           variant="ghost" 
           size="icon" 
