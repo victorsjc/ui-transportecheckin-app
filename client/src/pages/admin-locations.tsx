@@ -1,5 +1,5 @@
 import { useAuth } from "@/hooks/use-auth";
-import { PageHeader } from "@/components/page-header";
+import { AdminHeader } from "@/components/admin-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -109,14 +109,14 @@ export default function AdminLocations() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <PageHeader title="Gerenciar Locais" backTo="/admin" />
-
-      <main className="flex-grow p-4">
+      <AdminHeader />
+      
+      <main className="flex-grow p-4 pt-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Formulário de cadastro */}
           <Card className="lg:col-span-1">
-            <CardHeader>
-              <CardTitle className="text-app font-roboto">Adicionar Novo Local</CardTitle>
+            <CardHeader className="pb-2">
+              <CardTitle className="sr-only">Formulário de Cadastro</CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -126,7 +126,7 @@ export default function AdminLocations() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-roboto">Nome do Local</FormLabel>
+                        <FormLabel>Nome do Local</FormLabel>
                         <FormControl>
                           <Input placeholder="Ex: Av. Paulista, 1000" {...field} />
                         </FormControl>
@@ -140,7 +140,7 @@ export default function AdminLocations() {
                     name="type"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-roboto">Tipo do Local</FormLabel>
+                        <FormLabel>Tipo do Local</FormLabel>
                         <Select 
                           onValueChange={field.onChange} 
                           defaultValue={field.value}
@@ -163,7 +163,7 @@ export default function AdminLocations() {
                   <div className="pt-4">
                     <Button 
                       type="submit" 
-                      className="w-full btn-primary font-roboto"
+                      className="w-full btn-primary"
                       disabled={createLocationMutation.isPending}
                     >
                       {createLocationMutation.isPending ? "Adicionando..." : "Adicionar Local"}
@@ -176,8 +176,8 @@ export default function AdminLocations() {
 
           {/* Lista de locais de partida */}
           <Card className="lg:col-span-1">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-app font-roboto">
+            <CardHeader className="pb-2">
+              <CardTitle className="flex items-center gap-2 text-app text-lg">
                 <MapPin className="h-5 w-5" />
                 Locais de Partida
               </CardTitle>
@@ -191,7 +191,7 @@ export default function AdminLocations() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="font-roboto">Nome</TableHead>
+                      <TableHead>Nome</TableHead>
                       <TableHead className="w-[50px]"></TableHead>
                     </TableRow>
                   </TableHeader>
@@ -219,8 +219,8 @@ export default function AdminLocations() {
 
           {/* Lista de locais de chegada */}
           <Card className="lg:col-span-1">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-app font-roboto">
+            <CardHeader className="pb-2">
+              <CardTitle className="flex items-center gap-2 text-app text-lg">
                 <MapPin className="h-5 w-5" />
                 Locais de Chegada
               </CardTitle>
@@ -234,7 +234,7 @@ export default function AdminLocations() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="font-roboto">Nome</TableHead>
+                      <TableHead>Nome</TableHead>
                       <TableHead className="w-[50px]"></TableHead>
                     </TableRow>
                   </TableHeader>

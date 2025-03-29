@@ -1,5 +1,5 @@
 import { useAuth } from "@/hooks/use-auth";
-import { PageHeader } from "@/components/page-header";
+import { AdminHeader } from "@/components/admin-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -121,14 +121,14 @@ export default function AdminTimes() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <PageHeader title="Gerenciar Horários" backTo="/admin" />
-
-      <main className="flex-grow p-4">
+      <AdminHeader />
+      
+      <main className="flex-grow p-4 pt-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Formulário de cadastro */}
           <Card>
-            <CardHeader>
-              <CardTitle className="text-app font-roboto">Adicionar Novo Horário de Retorno</CardTitle>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-app text-lg">Adicionar Novo Horário de Retorno</CardTitle>
             </CardHeader>
             <CardContent>
               <Form {...form}>
@@ -138,7 +138,7 @@ export default function AdminTimes() {
                     name="time"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="font-roboto">Horário (formato: HHhMM)</FormLabel>
+                        <FormLabel>Horário (formato: HHhMM)</FormLabel>
                         <FormControl>
                           <Input placeholder="Ex: 17h10" {...field} />
                         </FormControl>
@@ -150,7 +150,7 @@ export default function AdminTimes() {
                   <div className="pt-4">
                     <Button 
                       type="submit" 
-                      className="w-full btn-primary font-roboto"
+                      className="w-full btn-primary"
                       disabled={createDepartureTimeMutation.isPending}
                     >
                       {createDepartureTimeMutation.isPending ? "Adicionando..." : "Adicionar Horário"}
@@ -163,8 +163,8 @@ export default function AdminTimes() {
 
           {/* Lista de horários */}
           <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-app font-roboto">
+            <CardHeader className="pb-2">
+              <CardTitle className="flex items-center gap-2 text-app text-lg">
                 <Clock className="h-5 w-5" />
                 Horários de Retorno
               </CardTitle>
@@ -178,8 +178,8 @@ export default function AdminTimes() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="font-roboto">Horário</TableHead>
-                      <TableHead className="text-center font-roboto">Ativo</TableHead>
+                      <TableHead>Horário</TableHead>
+                      <TableHead className="text-center">Ativo</TableHead>
                       <TableHead className="w-[50px]"></TableHead>
                     </TableRow>
                   </TableHeader>
