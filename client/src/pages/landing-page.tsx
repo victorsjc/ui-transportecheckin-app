@@ -27,7 +27,7 @@ export default function LandingPage() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-title">
           </h2>
-          <p className="text-lg mb-8 text-description">
+          <p className="text-lg mb-8 text-white">
             Simplifique o processo de check-in, acompanhe seus deslocamentos e organize suas viagens
             com facilidade e segurança.
           </p>
@@ -35,7 +35,7 @@ export default function LandingPage() {
             <Button 
               onClick={() => navigate("/auth")}
               size="lg"
-              className="btn-primary hover:opacity-90"
+              className="btn-primary border border-white hover:opacity-90"
             >
               Cadastre-se
             </Button>
