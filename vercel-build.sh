@@ -9,14 +9,15 @@ npx vite build
 
 # Prepara ambiente para build do serverless
 echo "Configurando ambiente serverless..."
-mkdir -p api
-mkdir -p dist
+mkdir -p dist/api
 
 # Construir API para formato serverless
 echo "Construindo serverless functions..."
-cp -r server api/server
-cp -r shared api/shared
-cp -r dist/assets dist/client-assets
+cp -r server dist/api/server
+cp -r shared dist/api/shared
+cp api/index.js dist/api/index.js
+cp api/_serverless.js dist/api/_serverless.js 
+mv dist/assets dist/client-assets
 
 # Adiciona informação de ambiente
 echo "NODE_ENV=production" > .env.production

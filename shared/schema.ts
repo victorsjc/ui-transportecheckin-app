@@ -19,6 +19,8 @@ export const insertUserSchema = createInsertSchema(users).omit({
   id: true,
   isActive: true,
   createdAt: true,
+}).required({
+  userType: true
 });
 
 // Vacation periods for mensalista users
@@ -48,7 +50,11 @@ export const checkins = pgTable("checkins", {
 export const insertCheckinSchema = createInsertSchema(checkins).omit({
   id: true,
   createdAt: true,
-});
+}).transform((data) => ({
+  ...data,
+  // Ensure returnTime is null if undefined or empty
+  returnTime: data.returnTime || null
+}));
 
 // Single-trip reservations
 export const singleTrips = pgTable("single_trips", {
@@ -65,7 +71,11 @@ export const insertSingleTripSchema = createInsertSchema(singleTrips).omit({
   id: true,
   isUsed: true,
   createdAt: true,
-});
+}).transform((data) => ({
+  ...data,
+  // Ensure returnTime is null if undefined or empty
+  returnTime: data.returnTime || null
+}));
 
 // Departure/Arrival locations configuration
 export const locations = pgTable("locations", {

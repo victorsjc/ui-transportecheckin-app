@@ -222,9 +222,16 @@ export class MemStorage implements IStorage {
 
   async createUser(insertUser: InsertUser): Promise<User> {
     const id = this.userCurrentId++;
+    // Criar o usuário com valores explícitos para evitar problemas de tipo
     const user: User = { 
-      ...insertUser, 
       id,
+      email: insertUser.email,
+      password: insertUser.password,
+      name: insertUser.name,
+      userType: insertUser.userType || "mensalista",
+      // Garantir que cpf e phone são null em vez de undefined
+      cpf: insertUser.cpf || null,
+      phone: insertUser.phone || null,
       isActive: true,
       createdAt: new Date()
     };
@@ -280,9 +287,12 @@ export class MemStorage implements IStorage {
 
   async createCheckin(insertCheckin: InsertCheckin): Promise<Checkin> {
     const id = this.checkinCurrentId++;
+    // Garantir que os tipos estejam corretos
     const checkin: Checkin = {
       ...insertCheckin,
       id,
+      // Garantir que returnTime seja null e não undefined
+      returnTime: insertCheckin.returnTime || null,
       createdAt: new Date()
     };
     this.checkins.set(id, checkin);
@@ -314,6 +324,8 @@ export class MemStorage implements IStorage {
       ...insertSingleTrip,
       id,
       isUsed: false,
+      // Garantir que returnTime seja null e não undefined
+      returnTime: insertSingleTrip.returnTime || null,
       createdAt: new Date()
     };
     this.singleTrips.set(id, singleTrip);
@@ -404,8 +416,17 @@ export class MemStorage implements IStorage {
   async createContract(contract: InsertContract): Promise<Contract> {
     const id = this.contractCurrentId++;
     const newContract: Contract = {
-      ...contract,
       id,
+      userId: contract.userId,
+      departureLocation: contract.departureLocation,
+      arrivalLocation: contract.arrivalLocation,
+      returnTime: contract.returnTime,
+      // Garantir que todos os booleanos tenham valores definidos
+      monday: contract.monday || false,
+      tuesday: contract.tuesday || false,
+      wednesday: contract.wednesday || false,
+      thursday: contract.thursday || false,
+      friday: contract.friday || false,
       createdAt: new Date(),
       updatedAt: new Date()
     };
