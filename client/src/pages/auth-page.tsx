@@ -86,7 +86,7 @@ export default function AuthPage() {
         >
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <h1 className="text-xl font-bold">Acesso ao Sistema</h1>
+        <h1 className="text-xl font-bold">TripCheck - Acesso ao Sistema</h1>
       </header>
 
       <div className="flex-1 p-6 flex flex-col justify-center max-w-md mx-auto w-full">

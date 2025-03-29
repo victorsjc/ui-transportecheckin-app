@@ -66,7 +66,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-primary text-white p-4 flex items-center justify-between shadow">
-        <h1 className="text-xl font-bold">TransporteCheck</h1>
+        <h1 className="text-xl font-bold">TripCheck</h1>
         <div className="flex items-center">
           <span className="mr-2 text-sm">{user?.name}</span>
           <button 

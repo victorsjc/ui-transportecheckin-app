@@ -11,7 +11,7 @@ export default function LandingPage() {
       <header className="bg-primary text-white py-4 px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Bus className="h-8 w-8" />
-          <h1 className="text-2xl font-bold">TransporteCheck</h1>
+          <h1 className="text-2xl font-bold">TripCheck</h1>
         </div>
         <Button 
           onClick={() => navigate("/auth")}
@@ -173,10 +173,10 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Bus className="h-6 w-6" />
-            <h3 className="text-xl font-bold">TransporteCheck</h3>
+            <h3 className="text-xl font-bold">TripCheck</h3>
           </div>
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} TransporteCheck. Todos os direitos reservados.
+            © {new Date().getFullYear()} TripCheck. Todos os direitos reservados.
           </p>
         </div>
       </footer>
