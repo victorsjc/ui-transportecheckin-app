@@ -79,7 +79,7 @@ export default function AdminTripsAdd() {
 
   const createSingleTripMutation = useMutation({
     mutationFn: async (formData: SingleTripFormValues) => {
-      const res = await apiRequest("POST", "/api/admin/trips", {
+      const res = await apiRequest("POST", "/api/admin/single-trips", {
         user: {
           name: formData.name,
           email: formData.email,
@@ -97,7 +97,7 @@ export default function AdminTripsAdd() {
       return await res.json();
     },
     onSuccess: (data: { user: User; trip: SingleTrip }) => {
-      queryClient.invalidateQueries({ queryKey: ["/api/admin/trips"] });
+      queryClient.invalidateQueries({ queryKey: ["/api/admin/single-trips"] });
       toast({
         title: "Passagem criada com sucesso",
         description: `Passagem criada para ${data.user.name}`,
