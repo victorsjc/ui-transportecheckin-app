@@ -18,9 +18,9 @@ export default function HistoryPage() {
 
   // Get available months from checkins
   const availableMonths = checkins
-    ? [...new Set(checkins.map(checkin => 
+    ? Array.from(new Set(checkins.map(checkin => 
         format(new Date(checkin.date), "MMMM yyyy", { locale: ptBR })
-      ))].sort((a, b) => {
+      ))).sort((a, b) => {
         // Sort by date descending (newest first)
         const dateA = new Date(a);
         const dateB = new Date(b);
@@ -56,7 +56,7 @@ export default function HistoryPage() {
       <main className="flex-grow p-4">
         <div className="bg-white rounded-lg shadow-md p-4 mb-4">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-gray-900">Histórico de Check-ins</h2>
+            <h2 className="text-lg font-semibold text-app">Histórico de Check-ins</h2>
             <div className="flex space-x-2">
               <Select value={directionFilter} onValueChange={setDirectionFilter}>
                 <SelectTrigger className="w-24">

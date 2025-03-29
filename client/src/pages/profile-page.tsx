@@ -32,14 +32,14 @@ export default function ProfilePage() {
               {getInitials()}
             </div>
             <div>
-              <h2 className="text-lg font-semibold text-gray-900">{user?.name}</h2>
+              <h2 className="text-lg font-semibold text-app">{user?.name}</h2>
               <p className="text-gray-600">{user?.email}</p>
               <p className="text-sm text-green-500 capitalize">{user?.userType}</p>
             </div>
           </div>
           
           <div className="border-t border-gray-200 pt-4">
-            <h3 className="font-medium text-gray-900 mb-3">Informações da Conta</h3>
+            <h3 className="font-medium text-app mb-3">Informações da Conta</h3>
             
             <div className="space-y-3">
               <div>
@@ -66,7 +66,7 @@ export default function ProfilePage() {
         </div>
         
         <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-          <h3 className="font-medium text-gray-900 mb-3">Configurações</h3>
+          <h3 className="font-medium text-app mb-3">Configurações</h3>
           
           <div className="space-y-4">
             <div className="flex items-center justify-between">

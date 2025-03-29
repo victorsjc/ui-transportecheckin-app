@@ -86,7 +86,7 @@ export default function AuthPage() {
         >
           <ArrowLeft className="h-5 w-5" />
         </Button>
-        <h1 className="text-xl font-bold">TripCheck - Acesso ao Sistema</h1>
+        <h1 className="text-xl font-bold text-white">TripCheck - Acesso ao Sistema</h1>
       </header>
 
       <div className="flex-1 p-6 flex flex-col justify-center max-w-md mx-auto w-full">
@@ -99,7 +99,7 @@ export default function AuthPage() {
           <TabsContent value="login">
             <Card>
               <CardHeader className="pb-2">
-                <h2 className="text-xl font-semibold">Faça login na sua conta</h2>
+                <h2 className="text-xl font-semibold text-app">Faça login na sua conta</h2>
               </CardHeader>
               <CardContent>
                 <Form {...loginForm}>
@@ -146,7 +146,7 @@ export default function AuthPage() {
           <TabsContent value="register">
             <Card>
               <CardHeader className="pb-2">
-                <h2 className="text-xl font-semibold">Crie uma nova conta</h2>
+                <h2 className="text-xl font-semibold text-app">Crie uma nova conta</h2>
               </CardHeader>
               <CardContent>
                 <Form {...registerForm}>

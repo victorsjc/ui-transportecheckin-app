@@ -66,7 +66,7 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <header className="bg-primary text-white p-4 flex items-center justify-between shadow">
-        <h1 className="text-xl font-bold">TripCheck</h1>
+        <h1 className="text-xl font-bold text-white">TripCheck</h1>
         <div className="flex items-center">
           <span className="mr-2 text-sm">{user?.name}</span>
           <button 
@@ -84,7 +84,7 @@ export default function DashboardPage() {
         <Card className="mb-4">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-gray-900">Check-in Hoje</h2>
+              <h2 className="text-lg font-semibold text-app">Check-in Hoje</h2>
               <span className="text-sm text-gray-600">{formattedDate}</span>
             </div>
             
@@ -102,7 +102,7 @@ export default function DashboardPage() {
                 </div>
                 <Button 
                   variant="default"
-                  className="bg-amber-500 hover:bg-amber-600"
+                  className="btn-primary"
                   onClick={() => navigate("/checkin/mensalista")}
                   disabled={isOnVacation || hasTodayCheckin}
                 >
@@ -115,7 +115,7 @@ export default function DashboardPage() {
 
         <Card className="mb-4">
           <CardContent className="pt-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-3">Próximas Viagens</h2>
+            <h2 className="text-lg font-semibold text-app mb-3">Próximas Viagens</h2>
             
             {upcomingTrips && upcomingTrips.length > 0 ? (
               upcomingTrips.map((trip) => (
@@ -143,7 +143,7 @@ export default function DashboardPage() {
 
         <Card>
           <CardContent className="pt-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-3">Gerenciar Férias</h2>
+            <h2 className="text-lg font-semibold text-app mb-3">Gerenciar Férias</h2>
             
             <div className="space-y-4">
               <p className="text-sm text-gray-600">Configure seu período de férias para liberar sua vaga automaticamente.</p>
@@ -176,7 +176,7 @@ export default function DashboardPage() {
                 
                 <Button 
                   onClick={() => navigate("/vacation/add")} 
-                  className="mt-3 w-full"
+                  className="mt-3 w-full btn-primary"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />

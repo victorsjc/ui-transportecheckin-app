@@ -11,7 +11,7 @@ export default function LandingPage() {
       <header className="bg-primary text-white py-4 px-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Bus className="h-8 w-8" />
-          <h1 className="text-2xl font-bold">TripCheck</h1>
+          <h1 className="text-2xl font-bold text-app">TripCheck</h1>
         </div>
         <Button 
           onClick={() => navigate("/auth")}
@@ -55,7 +55,7 @@ export default function LandingPage() {
       {/* Features Section */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-app">
             Recursos do Sistema
           </h2>
           
@@ -64,7 +64,7 @@ export default function LandingPage() {
               <div className="bg-primary/10 p-3 rounded-full mb-4">
                 <CheckCircle className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-800">Check-in Simplificado</h3>
+              <h3 className="text-xl font-bold mb-2 text-app">Check-in Simplificado</h3>
               <p className="text-gray-600">
                 Realize check-ins rápidos e fáceis para suas viagens, escolhendo direção e horário de retorno quando necessário.
               </p>
@@ -74,7 +74,7 @@ export default function LandingPage() {
               <div className="bg-primary/10 p-3 rounded-full mb-4">
                 <Calendar className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-800">Gerenciamento de Férias</h3>
+              <h3 className="text-xl font-bold mb-2 text-app">Gerenciamento de Férias</h3>
               <p className="text-gray-600">
                 Mensalistas podem programar períodos de férias, garantindo que seu assento fique disponível para outros passageiros.
               </p>
@@ -84,7 +84,7 @@ export default function LandingPage() {
               <div className="bg-primary/10 p-3 rounded-full mb-4">
                 <Clock className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-800">Histórico Completo</h3>
+              <h3 className="text-xl font-bold mb-2 text-app">Histórico Completo</h3>
               <p className="text-gray-600">
                 Acompanhe seu histórico de viagens e check-ins realizados, facilitando o controle e a prestação de contas.
               </p>
@@ -94,7 +94,7 @@ export default function LandingPage() {
               <div className="bg-primary/10 p-3 rounded-full mb-4">
                 <Users className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-800">Tipos de Usuário</h3>
+              <h3 className="text-xl font-bold mb-2 text-app">Tipos de Usuário</h3>
               <p className="text-gray-600">
                 Atendendo mensalistas e passageiros avulsos com funcionalidades específicas para cada tipo de usuário.
               </p>
@@ -106,13 +106,13 @@ export default function LandingPage() {
       {/* How It Works Section */}
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12 text-app">
             Como Funciona
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-primary">Para Mensalistas</h3>
+              <h3 className="text-xl font-bold mb-4 text-app">Para Mensalistas</h3>
               <ol className="space-y-4 text-gray-700">
                 <li className="flex gap-3">
                   <span className="bg-primary text-white rounded-full h-6 w-6 flex items-center justify-center flex-shrink-0">1</span>
@@ -134,7 +134,7 @@ export default function LandingPage() {
             </div>
             
             <div className="border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4 text-primary">Para Passageiros Avulsos</h3>
+              <h3 className="text-xl font-bold mb-4 text-app">Para Passageiros Avulsos</h3>
               <ol className="space-y-4 text-gray-700">
                 <li className="flex gap-3">
                   <span className="bg-primary text-white rounded-full h-6 w-6 flex items-center justify-center flex-shrink-0">1</span>
@@ -173,7 +173,7 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Bus className="h-6 w-6" />
-            <h3 className="text-xl font-bold">TripCheck</h3>
+            <h3 className="text-xl font-bold text-white">TripCheck</h3>
           </div>
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} TripCheck. Todos os direitos reservados.

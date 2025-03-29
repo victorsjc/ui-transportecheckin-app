@@ -8,7 +8,8 @@
   :root {
     --primary-color: #CFE0BC;
     --button-background: #7FA653;
-    --button-text: #CFE0BC;
+    --button-text: #99CD85;
+    --text-color: #99CD85;
     --auth-button-background: #99CD85;
   }
 
@@ -22,7 +23,7 @@
   }
 }
 
-/* Button customizations */
+/* Button and text customizations */
 .btn-primary {
   background-color: var(--button-background) !important;
   color: var(--button-text) !important;
@@ -35,4 +36,12 @@
 .btn-login {
   background-color: var(--button-background) !important;
   color: var(--button-text) !important;
+}
+
+.text-app {
+  color: var(--text-color) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
 }
