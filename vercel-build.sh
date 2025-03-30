@@ -17,7 +17,7 @@ cp -r server dist/api/server
 cp -r shared dist/api/shared
 cp api/index.js dist/api/index.js
 cp api/_serverless.js dist/api/_serverless.js 
-mv dist/assets dist/client-assets
+mv dist/public/assets dist/client-assets
 
 # Adiciona informação de ambiente
 echo "NODE_ENV=production" > .env.production
