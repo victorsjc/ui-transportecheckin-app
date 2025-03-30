@@ -3,6 +3,13 @@
   "buildCommand": "./vercel-build.sh",
   "outputDirectory": "dist",
   "installCommand": "npm install",
+  "routes":[
+      {
+        "source" "/api/(.*)",
+        "destination": "/api",
+        "methods": ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]
+      }
+  ],  
   "rewrites": [
     {
       "source": "/api/(.*)",
@@ -12,11 +19,6 @@
       "source": "/(.*)",
       "destination": "/public/index.html"
     }
-  ],
-  "routes":[
-      "source": "/api/(.*)",
-      "destination": "/api",  
-      "methods": ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]
   ],
   "env": {
     "NODE_ENV": "production"
