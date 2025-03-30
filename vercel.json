@@ -12,13 +12,6 @@
       "source": "/(.*)",
       "destination": "/public/index.html"
     }
-  ],
-  "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/api",
-        "methods": ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]
-      }
   ],  
   "env": {
     "NODE_ENV": "production"
