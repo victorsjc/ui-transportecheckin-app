@@ -5,8 +5,8 @@
   "installCommand": "npm install",
   "routes":[
       {
-        "source" "/api/(.*)",
-        "destination": "/api",
+        "src": "/api/(.*)",
+        "dest": "/api",
         "methods": ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]
       }
   ],  
