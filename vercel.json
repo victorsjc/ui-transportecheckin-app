@@ -6,7 +6,8 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api"
+      "destination": "/api",
+      "methods": ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]
     },
     {
       "source": "/(.*)",

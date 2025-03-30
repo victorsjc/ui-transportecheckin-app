@@ -9,7 +9,12 @@ const { registerRoutes } = require('../server/routes');
 // Initialize Express app
 const app = express();
 app.use(express.json());
-app.use(cors());
+const corsConfig = {
+  origin: "*",
+  credential: true,
+  methods: ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]
+}
+app.use(cors(corsConfig));
 
 // Setup session (with memory store for serverless environment)
 const sessionMiddleware = session({
