@@ -17,7 +17,7 @@
     "NODE_ENV": "production"
   },
   "functions": {
-    "api/_serverless.js": {
+    "dist/api/index.js": {
       "memory": 1024,
       "maxDuration": 10
     }
