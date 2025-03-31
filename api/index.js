@@ -5,8 +5,11 @@ import memorystore from 'memorystore';
 import cors from 'cors';
 import { setupAuth } from './server/auth.ts';
 import { registerRoutes } from './server/routes.ts';
+import fs from 'fs';
 
 const MemoryStore = memorystore(session);
+
+console.log(fs.readdirSync('/var/task')); // Lista os arquivos disponíveis
 
 // Initialize Express app
 const app = express();
