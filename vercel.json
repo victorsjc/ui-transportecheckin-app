@@ -17,7 +17,7 @@
       {
         "src": "/api/(.*)",
         "dest": "/api",
-        "methods": ["POST", "GET", "DELETE"]
+        "methods": ["POST", "GET", "DELETE", "OPTIONS"]
       }
   ],  
   "env": {
