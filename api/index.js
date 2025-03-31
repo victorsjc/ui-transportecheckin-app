@@ -1,19 +1,22 @@
-const express = require('express');
-const session = require('express-session');
-const passport = require('passport');
-const MemoryStore = require('memorystore')(session);
-const cors = require('cors');
-const { setupAuth } = require('../server/auth');
-const { registerRoutes } = require('../server/routes');
+import express from 'express';
+import session from 'express-session';
+import passport from 'passport';
+import memorystore from 'memorystore';
+import cors from 'cors';
+import { setupAuth } from '../server/auth';
+import { registerRoutes } from '../server/routes';
+
+const MemoryStore = memorystore(session);
 
 // Initialize Express app
 const app = express();
 app.use(express.json());
+
 const corsConfig = {
   origin: "*",
-  credential: true,
-  methods: ["GET","POST","PUT","PATCH","DELETE","OPTIONS"]
-}
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+};
 app.use(cors(corsConfig));
 
 // Setup session (with memory store for serverless environment)
@@ -49,4 +52,4 @@ app.use((err, req, res, next) => {
 });
 
 // Export for Vercel serverless function
-module.exports = app;
+export default app;
