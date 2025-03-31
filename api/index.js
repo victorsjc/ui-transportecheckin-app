@@ -3,8 +3,8 @@ import session from 'express-session';
 import passport from 'passport';
 import memorystore from 'memorystore';
 import cors from 'cors';
-import { setupAuth } from '../server/auth';
-import { registerRoutes } from '../server/routes';
+import { setupAuth } from '../server/auth.ts';
+import { registerRoutes } from '../server/routes.ts';
 
 const MemoryStore = memorystore(session);
 
