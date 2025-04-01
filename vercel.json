@@ -27,7 +27,7 @@
     "NODE_ENV": "production"
   },
   "functions": {
-    "api/index.js": {
+    "dist/index.js": {
       "memory": 1024,
       "maxDuration": 10
     }

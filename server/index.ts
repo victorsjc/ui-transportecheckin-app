@@ -1,8 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
-import fs from 'fs';
-console.log(fs.readdirSync('/var/task')); // Lista os arquivos disponíveis
 
 const app = express();
 app.use(express.json());
