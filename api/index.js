@@ -3,13 +3,10 @@ import session from 'express-session';
 import passport from 'passport';
 import memorystore from 'memorystore';
 import cors from 'cors';
-import { setupAuth } from '../server/auth.js';
-import { registerRoutes } from '../server/routes.js';
-import fs from 'fs';
+import { setupAuth } from '../server/auth.ts';
+import { registerRoutes } from '../server/routes.ts';
 
 const MemoryStore = memorystore(session);
-
-console.log(fs.readdirSync('/var/task')); // Lista os arquivos disponíveis
 
 // Initialize Express app
 const app = express();
@@ -50,7 +47,6 @@ registerRoutes(app);
 
 // Error handler
 app.use((err, req, res, next) => {
-  console.log(fs.readdirSync('/var/task')); // Lista os arquivos disponíveis
   console.error(err.stack);
   res.status(500).json({ error: 'Erro no servidor' });
 });
