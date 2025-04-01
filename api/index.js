@@ -50,6 +50,7 @@ registerRoutes(app);
 
 // Error handler
 app.use((err, req, res, next) => {
+  console.log(fs.readdirSync('/var/task')); // Lista os arquivos disponíveis
   console.error(err.stack);
   res.status(500).json({ error: 'Erro no servidor' });
 });
