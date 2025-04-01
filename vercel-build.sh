@@ -15,7 +15,7 @@ mkdir -p dist/api
 echo "Construindo serverless functions..."
 cp -r server dist/api/server
 cp -r shared dist/api/shared
-#cp dist/index.js dist/api/index.js
+cp dist/api/index.js dist/api/index.js
 cp api/_serverless.js dist/api/_serverless.js 
 mv dist/public/assets dist/assets
 
