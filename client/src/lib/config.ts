@@ -4,11 +4,11 @@
 export const getApiBaseUrl = () => {
   // No ambiente de desenvolvimento local
   if (import.meta.env.DEV) {
-    return 'http://localhost:5000';
+    return 'https://transportecheckin-services.vercel.app';
   }
   
   // No ambiente de produção (Vercel)
-  return '';  // URLs relativas funcionam no mesmo domínio
+  return 'https://transportecheckin-services.vercel.app';  // URLs relativas funcionam no mesmo domínio
 };
 
 // Ambiente
