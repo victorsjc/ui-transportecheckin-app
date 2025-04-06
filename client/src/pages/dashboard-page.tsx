@@ -61,7 +61,7 @@ export default function DashboardPage() {
   const hasTodayCheckin = checkins?.some(checkin => {
     //verifica se o retorno já foi efetuado, senao manter ativado
     const checkinDate = new Date(checkin.date);
-    return ((checkinDate.toISOString().split('T')[0] === today.toISOString().split('T')[0]) && (checkin.direction == "retorno"))
+    return ((checkinDate.toISOString().split('T')[0] === today.toISOString().split('T')[0]) && (checkin.direction === "retorno"))
   });
 
   return (
