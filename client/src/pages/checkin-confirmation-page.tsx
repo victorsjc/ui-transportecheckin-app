@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/use-auth";
 
 export default function CheckinConfirmationPage() {
   const [, navigate] = useLocation();
-  const { user } = useAuth();
+  const { user, logoutMutation } = useAuth();
   
   // We would normally get the checkin details from location state or from an API
   // For this example, we'll use static data
