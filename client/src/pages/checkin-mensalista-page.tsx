@@ -31,7 +31,10 @@ export default function CheckinMensalistaPage() {
       
       await apiRequest("POST", "/api/checkins", checkinData);
     },
-    onSuccess: () => {
+    onSuccess: (res) => {
+      if(res?.data){
+        //
+      }
       queryClient.invalidateQueries({ queryKey: ["/api/checkins"] });
       navigate("/checkin/confirmation");
     },

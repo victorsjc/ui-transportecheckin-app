@@ -12,10 +12,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "allowImportingTsExtensions": true,
+    "outDir": "./dist",
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "types": ["node", "vite/client"],
-    "outDir": "./dist/api",
     "paths": {
       "@/*": ["./client/src/*"],
       "@shared/*": ["./shared/*"]
