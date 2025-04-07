@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useContext } from "react";
 import {
   useQuery,
   useMutation,
@@ -7,7 +7,6 @@ import {
 import { User as SelectUser, InsertUser } from "@shared/schema";
 import { getQueryFn, apiRequest, queryClient } from "../lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 type AuthContextType = {
   user: SelectUser | null;
@@ -25,7 +24,6 @@ type LoginData = {
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [ setUser] = useState(null);
   const { toast } = useToast();
   const {
     data: user,
@@ -35,17 +33,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     queryKey: ["/api/user"],
     queryFn: getQueryFn({ on401: "returnNull" }),
   });
-
-  const signInWithGoogle = async () => {
-    const auth = getAuth();
-    const provider = new GoogleAuthProvider();
-    try {
-      const result = await signInWithPopup(auth, provider);
-      setUser(result.user);
-    } catch (error) {
-      console.error("Erro ao fazer login com Google", error);
-    }
-  };  
 
   const loginMutation = useMutation({
     mutationFn: async (credentials: LoginData) => {
