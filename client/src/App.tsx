@@ -76,12 +76,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <GoogleOAuthProvider clientId="627127621175-td1fqlg7dfkm4bm3ljbi8q9svuoe3f4b.apps.googleusercontent.com">
+      <AuthProvider>
         <div className="mx-auto bg-white min-h-screen relative">
           <Router />
           <Toaster />
         </div>
-      </GoogleOAuthProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }
