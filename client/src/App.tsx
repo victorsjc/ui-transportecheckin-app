@@ -28,6 +28,8 @@ import AdminTripDetails from "@/pages/admin-trip-details";
 import AdminLocations from "@/pages/admin-locations";
 import AdminTimes from "@/pages/admin-times";
 
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 // Route that redirects to dashboard if authenticated, otherwise shows landing page
 function HomeRoute() {
   const { user } = useAuth();
@@ -74,12 +76,12 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
+      <GoogleOAuthProvider clientId="627127621175-td1fqlg7dfkm4bm3ljbi8q9svuoe3f4b.apps.googleusercontent.com">
         <div className="mx-auto bg-white min-h-screen relative">
           <Router />
           <Toaster />
         </div>
-      </AuthProvider>
+      </GoogleOAuthProvider>
     </QueryClientProvider>
   );
 }
