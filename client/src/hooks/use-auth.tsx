@@ -25,7 +25,7 @@ type LoginData = {
 
 export const AuthContext = createContext<AuthContextType | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState(null);
+  const [ setUser] = useState(null);
   const { toast } = useToast();
   const {
     data: user,
