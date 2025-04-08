@@ -25,8 +25,7 @@ export default function LandingPage() {
           className="btn-auth text-white hover:bg-opacity-90"
         >
           Entrar
-        </Button>
-        <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+        </Button>        
       </header>
 
       {/* Hero Section */}
@@ -54,6 +53,7 @@ export default function LandingPage() {
             >
               Check-in Avulso
             </Button>
+            <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
           </div>
         </div>
       </section>
