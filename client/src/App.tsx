@@ -28,6 +28,8 @@ import AdminTripDetails from "@/pages/admin-trip-details";
 import AdminLocations from "@/pages/admin-locations";
 import AdminTimes from "@/pages/admin-times";
 
+import { GoogleLogin } from '@react-oauth/google';
+
 // Route that redirects to dashboard if authenticated, otherwise shows landing page
 function HomeRoute() {
   const { user } = useAuth();
@@ -72,12 +74,19 @@ function Router() {
 }
 
 function App() {
+    const responseMessage = (response) => {
+        console.log(response);
+    };
+    const errorMessage = (error) => {
+        console.log(error);
+    };  
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <div className="mx-auto bg-white min-h-screen relative">
           <Router />
           <Toaster />
+          <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
         </div>
       </AuthProvider>
     </QueryClientProvider>
