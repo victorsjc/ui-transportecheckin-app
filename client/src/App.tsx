@@ -28,8 +28,6 @@ import AdminTripDetails from "@/pages/admin-trip-details";
 import AdminLocations from "@/pages/admin-locations";
 import AdminTimes from "@/pages/admin-times";
 
-import { GoogleOAuthProvider } from '@react-oauth/google';
-
 // Route that redirects to dashboard if authenticated, otherwise shows landing page
 function HomeRoute() {
   const { user } = useAuth();
