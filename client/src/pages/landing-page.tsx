@@ -1,11 +1,17 @@
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Bus, CheckCircle, Calendar, Clock, Users } from "lucide-react";
+import { GoogleLogin } from '@react-oauth/google';
 
 export default function LandingPage() {
   const [, navigate] = useLocation();
-
-  return (
+  const responseMessage = (response) => {
+        console.log(response);
+    };
+  const errorMessage = (error) => {
+        console.log(error);
+    };
+  return (    
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="bg-primary-custom text-white py-4 px-6 flex items-center justify-between">
@@ -20,6 +26,7 @@ export default function LandingPage() {
         >
           Entrar
         </Button>
+        <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
       </header>
 
       {/* Hero Section */}
