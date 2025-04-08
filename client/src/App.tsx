@@ -82,11 +82,11 @@ function App() {
     };  
   return (
     <QueryClientProvider client={queryClient}>
+      <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
       <AuthProvider>
         <div className="mx-auto bg-white min-h-screen relative">
           <Router />
-          <Toaster />
-          <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+          <Toaster />          
         </div>
       </AuthProvider>
     </QueryClientProvider>

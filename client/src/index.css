@@ -64,3 +64,8 @@ h1, h2, h3, h4, h5, h6 {
 .bg-primary-custom {
   background-color: var(--primary-color) !important;
 }
+
+.responsive-container {
+    max-width: 100%;
+    padding: 20px;
+}
