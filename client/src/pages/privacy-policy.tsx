@@ -7,20 +7,6 @@ export default function PrivacyPolicy() {
   const [, navigate] = useLocation();
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="bg-primary-custom text-white py-4 px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Bus className="h-8 w-8 text-logo" />
-          <h1 className="text-2xl font-bold text-logo">TripCheck</h1>
-        </div>
-        <Button 
-          onClick={() => navigate("/auth")}
-          variant="outline" 
-          className="btn-auth text-white hover:bg-opacity-90"
-        >
-          Entrar
-        </Button>        
-      </header>
 
       <section className="py-16 px-6 bg-gray-50">
         <p>A sua privacidade é importante para nós. É política do TripCheck respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site 
@@ -62,7 +48,7 @@ export default function PrivacyPolicy() {
             © {new Date().getFullYear()} TripCheck. Todo o conteúdo deste site, incluindo textos, imagens, design e funcionalidades, está protegido por direitos autorais. É proibida a reprodução, distribuição ou uso sem autorização prévia do autor.
           </p>
         </div>
-      </footer>      
+      </footer>
     </div>
   );
 }
