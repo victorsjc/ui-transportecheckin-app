@@ -1,4 +1,4 @@
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Bus, CheckCircle, Calendar, Clock, Users } from "lucide-react";
 import { GoogleLogin } from '@react-oauth/google';
@@ -184,6 +184,7 @@ export default function LandingPage() {
           <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} TripCheck. Todo o conteúdo deste site, incluindo textos, imagens, design e funcionalidades, está protegido por direitos autorais. É proibida a reprodução, distribuição ou uso sem autorização prévia do autor.
           </p>
+          <Link href="/privacy-policy">Leia nossa Política de Privacidade</Link>
         </div>
       </footer>
     </div>
