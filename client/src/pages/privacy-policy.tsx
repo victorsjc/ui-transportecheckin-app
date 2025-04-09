@@ -1,6 +1,8 @@
 import React from "react";
+import { useLocation } from "wouter";
 
 export default function PrivacyPolicy() {
+  const [, navigate] = useLocation();
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
