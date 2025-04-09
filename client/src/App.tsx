@@ -27,7 +27,7 @@ import AdminTripsAdd from "@/pages/admin-trips-add";
 import AdminTripDetails from "@/pages/admin-trip-details";
 import AdminLocations from "@/pages/admin-locations";
 import AdminTimes from "@/pages/admin-times";
-import PrivacyPolicy from "@pages/privacy-policy";
+import PrivacyPolicy from "@/pages/privacy-policy";
 
 // Route that redirects to dashboard if authenticated, otherwise shows landing page
 function HomeRoute() {
