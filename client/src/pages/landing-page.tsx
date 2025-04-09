@@ -182,7 +182,7 @@ export default function LandingPage() {
             <h3 className="text-xl font-bold text-logo">TripCheck</h3>
           </div>
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} TripCheck. Todos os direitos reservados.
+            © {new Date().getFullYear()} TripCheck. Todo o conteúdo deste site, incluindo textos, imagens, design e funcionalidades, está protegido por direitos autorais. É proibida a reprodução, distribuição ou uso sem autorização prévia do autor.
           </p>
         </div>
       </footer>
