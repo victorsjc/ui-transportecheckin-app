@@ -35,6 +35,22 @@ export default function PrivacyPolicy() {
         <p>O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contato conosco.</p>      
       </section>
 
+      <section className="py-16 px-6 bg-gray-50">
+        <h2>Compromisso do Usuário</h2>
+        <p>O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o TripCheck oferece no site e com caráter enunciativo, mas não limitativo:</p>
+        <ul>
+          <li>A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé e à ordem pública;</li>
+          <li>B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica ou qualquer tipo de pornografia ilegal, apologia ao terrorismo ou contra os direitos humanos;</li>
+          <li>C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do TripCheck, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas que possam causar danos.</li>
+        </ul>
+      </section>
+
+      <section className="py-16 px-6 bg-gray-50">
+        <h2>Mais Informações</h2>
+        <p>Esperamos que estas informações estejam claras. Se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</p>
+        <p>Esta política é efetiva a partir de 9 de abril de 2025.</p>
+      </section>      
+
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-8 px-6 mt-auto">
         <div className="max-w-4xl mx-auto text-center">
