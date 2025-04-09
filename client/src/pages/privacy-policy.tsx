@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation } from "wouter";
+import { Button } from "@/components/ui/button";
+import { Bus } from "lucide-react";
 
 export default function PrivacyPolicy() {
   const [, navigate] = useLocation();
