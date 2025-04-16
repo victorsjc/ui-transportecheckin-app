@@ -15,7 +15,7 @@ export function SocialLogin ({ children }: { children: ReactNode }) {
           bodyData.append("client_id", "627127621175-td1fqlg7dfkm4bm3ljbi8q9svuoe3f4b.apps.googleusercontent.com");
           bodyData.append("client_secret", "INPTQn3uLwJxYQ2CRbhhS30w");
           bodyData.append("code", response.code);
-          bodyData.append("redirect_uri", "https://ui-transportecheckin-app.vercel.app/");
+          bodyData.append("redirect_uri", "postmessage");
           bodyData.append("grant_type", "authorization_code");
 
             // Realizando a requisição POST
