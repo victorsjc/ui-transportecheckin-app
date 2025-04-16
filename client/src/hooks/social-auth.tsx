@@ -19,7 +19,7 @@ export function SocialLogin ({ children }: { children: ReactNode }) {
           bodyData.append("grant_type", "authorization_code");
 
             // Realizando a requisição POST
-            const response = await fetch("https://oauth2.googleapis.com/token", {
+            const result = await fetch("https://oauth2.googleapis.com/token", {
               method: "POST",
               headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -27,12 +27,12 @@ export function SocialLogin ({ children }: { children: ReactNode }) {
               body: bodyData.toString(),
             });
 
-            if (response.ok) {
-              const data = await response.json();
+            if (result.ok) {
+              const data = await result.json();
               setTokens(data);
               console.log("Tokens Recebidos:", data);
             } else {
-              console.error("Erro na troca de código:", response.status, await response.text());
+              console.error("Erro na troca de código:", result.status, await result.text());
             }
     },
     onError: (error) => {
