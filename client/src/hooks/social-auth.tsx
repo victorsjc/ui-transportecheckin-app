@@ -10,9 +10,7 @@ export function SocialLogin ({ children }: { children: ReactNode }) {
     onSuccess: async (response) => {
       console.log("Authorization Code Response:", response.code);
       // Aqui você pode enviar o response.code para o servidor
-      try {
-
-            // Corpo da requisição
+      // Corpo da requisição
           const bodyData = new URLSearchParams();
           bodyData.append("client_id", "627127621175-td1fqlg7dfkm4bm3ljbi8q9svuoe3f4b.apps.googleusercontent.com");
           bodyData.append("client_secret", "INPTQn3uLwJxYQ2CRbhhS30w");
