@@ -29,7 +29,6 @@ export function SocialLogin ({ children }: { children: ReactNode }) {
 
             if (result.ok) {
               const data = await result.json();
-              setTokens(data);
               console.log("Tokens Recebidos:", data);
             } else {
               console.error("Erro na troca de código:", result.status, await result.text());
