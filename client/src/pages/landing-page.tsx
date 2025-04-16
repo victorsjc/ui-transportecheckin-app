@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Bus, CheckCircle, Calendar, Clock, Users } from "lucide-react";
 import { GoogleLogin } from '@react-oauth/google';
+import { SocialLogin } from "@/hooks/social-auth";
 
 export default function LandingPage() {
   const [, navigate] = useLocation();
@@ -53,7 +54,7 @@ export default function LandingPage() {
             >
               Check-in Avulso
             </Button>
-            <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
+            <SocialLogin />
           </div>
         </div>
       </section>
