@@ -22,6 +22,4 @@ export function SocialLogin ({ children }: { children: ReactNode }) {
       </div>
     </GoogleOAuthProvider>
   );
-};
-
-export default App;
+}
