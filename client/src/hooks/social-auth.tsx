@@ -18,7 +18,6 @@ export function SocialLogin ({ children }: { children: ReactNode }) {
           bodyData.append("redirect_uri", "https://ui-transportecheckin-app.vercel.app/");
           bodyData.append("grant_type", "authorization_code");
 
-          try {
             // Realizando a requisição POST
             const response = await fetch("https://oauth2.googleapis.com/token", {
               method: "POST",
@@ -35,14 +34,10 @@ export function SocialLogin ({ children }: { children: ReactNode }) {
             } else {
               console.error("Erro na troca de código:", response.status, await response.text());
             }
-          } catch (error) {
-            console.error("Erro ao realizar a requisição:", error);
-          }
     },
     onError: (error) => {
       console.error("Login Failed:", error);
-    },
-    scope: "openid profile email", // Scopes necessários
+    }
   });
 
   return (
